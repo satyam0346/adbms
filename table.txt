@@ -8,7 +8,7 @@ ManagerID number
 
 
 INSERT INTO Departments VALUES(10,'Engineering',500000, 'New York', 101);
-INSERT INTO Departments VALUES(20,'Marketing',150000,'San Franciso',104);
+INSERT INTO Departments VALUES(20,'Marketing',150000,'San Francisco',104);
 INSERT INTO Departments VALUES(30,'Sales',200000,'Chicago',105);
 INSERT INTO Departments VALUES(40,'HR',80000,'New York',103);
 INSERT INTO Departments VALUES(50,'Finance',300000,'San Francisco',102);
