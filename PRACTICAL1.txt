@@ -1,0 +1,49 @@
+--Que 1
+SELECT FirstName, LastName, Salary
+FROM Employees
+WHERE Salary > (SELECT AVG(Salary) FROM Employees);
+
+--Que 2
+SELECT ProjectID, Role, HoursWorked
+FROM Assignments
+WHERE HoursWorked = (SELECT MAX(HoursWorked) FROM Assignments)
+
+--Que 3
+SELECT FirstName, LastName
+FROM Employees
+WHERE DepartmentID IN (
+    SELECT DepartmentID 
+    FROM Departments 
+    WHERE Location = 'San Francisco'
+);
+
+--Que 4
+SELECT *
+FROM Departments
+WHERE DepartmentID IN (
+    SELECT DepartmentID 
+    FROM Projects 
+    WHERE Deadlines > 2025
+);
+
+--Que 5
+SELECT Location, SUM(Budget) AS TotalBudget
+FROM Departments
+GROUP BY Location;
+
+--Que 6
+SELECT DepartmentID, MIN(Salary) AS MinSalary, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY DepartmentID;
+
+--Que 7
+SELECT Location
+FROM Departments
+GROUP BY Location
+HAVING SUM(Budget) > 400000;
+
+--Que 8
+SELECT Role
+FROM Assignments
+GROUP BY Role
+HAVING AVG(HoursWorked) > 50;
