@@ -88,7 +88,7 @@ CREATE TABLE Customer(
     Customer_ID number,
     Customer_Name varchar(20),
     City varchar(20),
-    Phone varchar(15)
+    Phone number
 );
 
 INSERT INTO Customer VALUES(1, 'Rahul', 'Ahmedabad', '9876543210');
