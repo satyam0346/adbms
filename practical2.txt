@@ -1,0 +1,38 @@
+--Que 1
+DECLARE
+    v_total_marks NUMBER;
+    v_avg_marks NUMBER;
+BEGIN
+    -- Calculate sum and average of marks
+    SELECT SUM(Marks), AVG(Marks)
+    INTO v_total_marks, v_avg_marks
+    FROM Student;
+
+    -- Display the results
+    DBMS_OUTPUT.PUT_LINE('Total Marks: ' || v_total_marks);
+    DBMS_OUTPUT.PUT_LINE('Average Marks: ' || ROUND(v_avg_marks, 2));
+END;
+/
+
+--Que 2
+BEGIN
+    -- Loop through each employee record
+    FOR emp_rec IN (SELECT Emp_Name, Salary FROM Employee) LOOP
+        DBMS_OUTPUT.PUT_LINE('Employee: ' || emp_rec.Emp_Name || ' | Salary: ' || emp_rec.Salary);
+    END LOOP;
+END;
+/
+
+--Que 3
+DECLARE
+    v_total_sales NUMBER;
+BEGIN
+    -- Calculate the total amount from all orders
+    SELECT SUM(Amount)
+    INTO v_total_sales
+    FROM Orders;
+
+    -- Display the total sales
+    DBMS_OUTPUT.PUT_LINE('Total Sales Amount: ' || v_total_sales);
+END;
+/
